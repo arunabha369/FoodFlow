@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#090D1C]">
+    <!-- *********** Nav-Bar Starts *********** -->
+    <nav class="h-16 w-full md:h-20">
+        <div class="nav-bar h-16 w-full flex flex-row justify-between items-center px-2">
+            <i class="cursor-pointer menuicn ml-3 ri-menu-4-line text-[30px] text-orange-600 md:text-[40px]"></i>
+            <div class="location flex flex-row justify-center items-center gap-2 text-white">
+                <h1 class="font-bold md:font-bold md:text-2xl">India</h1>
+                <i class="ri-map-pin-line md:text-2xl"></i>
+            </div>
+            <div class="user user-img">
+                <i class="ri-user-line cursor-pointer text-[22px] rounded-[50%] text-orange-600 md:text-[40px]"></i>
+              
+            </div>
+        </div>
+
+    </nav>
+     <!-- *********** Nav-Bar Ends *********** -->
+
+<!-- ************ Nav-Menu Starts ************** -->
+<div class="relative top-[-300px] text-white font-semibold duration-1000 nav-popup mt-[10px] bg-slate-700 opacity-80 flex flex-col gap-4 py-4 text-center" style="display:none;">
+    <a href="index.html" class="hover:translate-y-[-2px] hover:text-gray-400 md:text-xl">Home</a>
+    <a href="cart.html" class="hover:translate-y-[-2px] hover:text-gray-400 md:text-xl">Cart</a>
+    <a class="hover:translate-y-[-2px] hover:text-gray-400 md:text-xl" onclick="Userclick()">Contact</a>
+    <a href="#" class="hover:translate-y-[-2px] hover:text-gray-400 md:text-xl">Profile</a>
+
+ </div>
+ <!-- ************ Nav-Menu Ends ************** -->
+
+ <!-- ********** Users Section Starts ************* -->
+ <div class=" flex flex-col items-center text-center absolute text-white font-semibold rounded-xl users-sec bg-gradient-to-r from-gray-600 to-teal-400 opacity-90 w-[40%] right-0 z-40 px-2 mr-2 md:w-[30%]" style="display: none;">
+    <div>
+<h1 class="Name-show md:text-xl md:font-semibold">Welcome To FoodWave! </h1>
+<br>
+<div class="text-white user-btns mt-1 flex flex-col gap-4 text-sm font-semibold items-center py-4">
+<button class="hover:bg-orange-700 Sign-btn shadow-lg px-2 py-1 bg-orange-500 rounded-xl h-8 w-18 md:h-12 md:w-24 md:text-lg">Sign Up</button>
+<button class="hover:bg-orange-700 log-btn shadow-lg px-2 py-1 bg-orange-500 rounded-xl h-8 w-14 md:h-12 md:w-20 md:text-lg">Log In</button>
+</div>
+    </div>
+
+    <div class=" mb-4 user-inpt flex flex-col gap-4 items-center" style="display: none;">
+        <input class="text-sm username-inpt px-2 placeholder-orange-400 bg-black rounded-xl w-[135px] md:w-[225px] md:text-lg" type="text" placeholder="Enter Username..">
+        <input class="text-sm userpsw-inpt px-2 placeholder-orange-400 bg-black rounded-xl w-[135px] md:w-[225px] md:text-lg" type="text" placeholder="Enter Password..">
+        <button class="Submit hover:bg-orange-800 Entr px-2 py-1 bg-orange-400 rounded-xl md:h-12 md:w-20 md:text-lg">
+            Enter
+        </button>
+        <div class="comp h-10 w-10 bg-green-500 opacity-0 transition-opacity duration-700 rounded-[50%] shadow-xl flex justify-center items-center">
+            <i class="ri-check-line"></i>
+        </div>
+    </div>
+    <div class=" inpt2 text-center text-white font-semibold py-4 px-2 flex flex-col gap-2">
+
+    </div>
+
+ </div>
+
+
+
+
+  <!-- ********** Users Section Ends ************* -->
+
+
+  <!-- *********** Main-Section Starts *********** -->
+    <main class="mt-8">
+        <div>
+            <h1 class="text-white text-4xl font-bold ml-4 md:text-6xl md:ml-10">Find good food,<br>around you</h1>
+        </div>
+        <div class=" h-14 w-full box mt-[30px] flex flex-row justify-center items-center gap-4 md:h-20 md:mt-[50px]">
+<div class=" py-1 search-box rounded-2xl bg-[#1D2236] px-2 h-8 md:h-16 md:px-3 md:w-[300px] md:flex md:flex-row md:justify-between md:items-center">
+    <input class=" outline-none bg-[#1D2236] inpt_srch md:h-12 md:text-xl" type="text" placeholder="Search..">
+    <i class="ri-search-line text-orange-500 md:text-2xl md:cursor-pointer md:hover:text-orange-800"></i>
+</div>
+<div class="flex flex-row gap-2">
+    <div class=" h-8 w-8 flex justify-center items-center p-1 rounded-[50%] bg-pink-500 text-white md:h-12 md:w-12">
+        <i class="ri-heart-fill"></i>
+    </div>
+    <div class=" h-8 w-8 flex justify-center items-center p-1 rounded-[50%] bg-orange-500 text-white md:h-12 md:w-12 FiltrKaro cursor-pointer md:hover:bg-orange-600">
+        <i class="ri-equalizer-2-fill"></i>
+    </div>
+</div>
+        </div>
+
+        <div class="flex justify-end items-center md:justify-center md:mt-4">
+            
+        <div class="fltr_popup bg-black shadow-xl shadow-[29px 29px 58px #04050b,
+        -29px -29px 58px #0e152d;] sm:text-right w-[130px] flex flex-col gap-2 px-2 rounded-xl hidden md:gap-4 md:px-4 md:py-3 md:w-[20%] md:text-center">
+        <h1 class="text-sm font-semibold text-white hover:text-gray-400 active:text-blue-900 cursor-pointer lToh md:text-xl">price Low To High</h1>
+        <h1 class="text-sm font-semibold text-white hover:text-gray-400 active:text-blue-900 cursor-pointer hTol md:text-xl">price High To low</h1>
+        </div>
+        </div>
+
+        <div class=" px-4 buttons_filter mt-5 flex flex-row text-white justify-between items-center md:m-6 md:px-6">
+<div class="cursor-pointer bg-orange-600 px-4 py-1 rounded-2xl Best_sellers md:px-6 md:py-2 md:text-xl md:font-semibold" ><h1 class="md:hover:text-gray-200">Best Sellers</h1></div>
+<div class="cursor-pointer  px-4 py-1 rounded-2xl Hot_deals md:px-6 md:py-2 md:text-xl md:font-semibold"><h1 class="md:hover:text-gray-200">Hot Deals</h1></div>
+<div class="cursor-pointer px-4 py-1 rounded-2xl Popular md:px-6 md:py-2 md:text-xl md:font-semibold"><h1 class="md:hover:text-gray-200">Popular</h1></div>
+        </div>
+
+        <div class="categories mt-10 md:mt-14">
+
+            <div class="searched_results sm:grid sm:grid-cols-2 gap-y-10 place-items-center px-2 mt-8 mb-5 md:grid-cols-3">
+
+            </div>
+
+            <div class="default-menu grid grid-cols-2 gap-y-10 place-items-center md:grid-cols-3">
+                <!-- Insert your default menu items here -->
+
+
+                <div class="card h-36 w-32 flex flex-col justify-center items-center gap-1 py-1 md:h-[250px] md:w-[230px]">
+                    <img class="border-[2px] border-orange-700 h-[70%] w-[80%] rounded-[50%] shadow-2xl shadow-black" src="https://img.freepik.com/free-photo/pizza-pizza-filled-with-tomatoes-salami-olives_140725-1200.jpg?t=st=1709665594~exp=1709669194~hmac=bb738008f2a7e6657f34f6f1d9e4609bbd85c6cda10d9b5a375a1c52de5b1caf&w=740" alt="">
+                    <div class="tittle h-[35%] w-[100%] rounded-md text-center">
+                        <h1 class="tittle-text text-white font-semibold md:text-2xl">
+                 Pizza
+                        </h1>
+                        <div class="text-left px-2 flex flex-row justify-between items-center">
+                            <h1 class="text-white text-[12px] font-semibold md:text-xl"> &#x20B9;299 </h1>
+                            <i class=" hover:text-orange-800 cursor-pointer ri-add-circle-fill text-orange-600 text-lg md:text-xl" data-number="0"></i>
+                        </div>
+                
+                    </div>
+                </div>
+                <div class="card h-36 w-32 flex flex-col justify-center items-center gap-1 py-1 md:h-[250px] md:w-[230px]">
+                    <img class="border-2 h-[70%] w-[80%] rounded-[50%] shadow-2xl shadow-black" src="https://img.freepik.com/free-photo/burger-hamburger-cheeseburger_505751-3690.jpg?t=st=1709669174~exp=1709672774~hmac=e883ca7f672e5dcb0e344e59bec3c70adbc4dd8d574e2c2050dc034a70ebb3b6&w=740" alt="">
+                    <div class="tittle h-[35%] w-[100%] rounded-md text-center">
+                        <h1 class="tittle-text text-white font-semibold md:text-2xl">
+                 Burger
+                        </h1>
+                        <div class="text-left px-2 flex flex-row justify-between items-center">
+                            <h1 class="text-white text-[12px] font-semibold md:text-xl"> &#x20B9;79 </h1>
+                            <i class=" hover:text-orange-800 cursor-pointer ri-add-circle-fill text-orange-600 text-lg md:text-xl" data-number="1"></i>
+                        </div>
+                
+                    </div>
+                </div>
+                
+                <div class="card h-36 w-32 flex flex-col justify-center items-center gap-1 py-1 md:h-[250px] md:w-[230px]">
+                    <img class="border-2 h-[70%] w-[80%] rounded-[50%] shadow-2xl shadow-black" src="https://img.freepik.com/premium-photo/classic-italian-pasta-penne-alla-arrabiata-with-freshly-cheese-dark-table-top-view-generative-ai_47243-2129.jpg?w=740" alt="">
+                    <div class="tittle h-[35%] w-[100%] rounded-md text-center">
+                        <h1 class="tittle-text text-white font-semibold md:text-2xl">
+                 Pasta
+                        </h1>
+                        <div class="text-left px-2 flex flex-row justify-between items-center">
+                            <h1 class="text-white text-[12px] font-semibold md:text-xl"> &#x20B9;179 </h1>
+                            <i class=" hover:text-orange-800 cursor-pointer ri-add-circle-fill text-orange-600 text-lg md:text-xl" data-number="2"></i>
+                        </div>
+                
+                    </div>
+                </div>
+                
+                <div class="card h-36 w-32 flex flex-col justify-center items-center gap-1 py-1 md:h-[250px] md:w-[230px]">
+                    <img class="border-2 h-[70%] w-[80%] rounded-[50%] shadow-2xl shadow-black" src="https://img.freepik.com/premium-photo/grilled-sandwich-served-with-red-sauce-green-chutney_759100-1.jpg?w=740" alt="">
+                    <div class="tittle h-[35%] w-[100%] rounded-md text-center">
+                        <h1 class="tittle-text text-white font-semibold md:text-2xl">
+                 Sandwich
+                        </h1>
+                        <div class="text-left px-2 flex flex-row justify-between items-center">
+                            <h1 class="text-white text-[12px] font-semibold md:text-xl"> &#x20B9;99 </h1>
+                            <i class=" hover:text-orange-800 cursor-pointer ri-add-circle-fill text-orange-600 text-lg md:text-xl" data-number="3"></i>
+                        </div>
+                
+                    </div>
+                </div>
+                
+                <div class="card h-36 w-32 flex flex-col justify-center items-center gap-1 py-1 md:h-[250px] md:w-[230px]">
+                    <img class="border-2 h-[70%] w-[80%] rounded-[50%] shadow-2xl shadow-black" src="https://img.freepik.com/free-photo/piece-cake-with-strawberry-crumbs-cup-tea-plate_176474-2975.jpg?t=st=1709669450~exp=1709673050~hmac=539e97e4d80a97430b08bc41a2d997acb40bf58e7b3d76af2ba83434af615cd9&w=740" alt="">
+                    <div class="tittle h-[35%] w-[100%] rounded-md text-center">
+                        <h1 class="tittle-text text-white font-semibold md:text-2xl">
+                 Pastry
+                        </h1>
+                        <div class="text-left px-2 flex flex-row justify-between items-center">
+                            <h1 class="text-white text-[12px] font-semibold md:text-xl"> &#x20B9;49 </h1>
+                            <i class=" hover:text-orange-800 cursor-pointer ri-add-circle-fill text-orange-600 text-lg md:text-xl" data-number="4"></i>
+                        </div>
+                
+                    </div>
+                </div>
+                
+                <div class="card h-36 w-32 flex flex-col justify-center items-center gap-1 py-1 md:h-[250px] md:w-[230px]">
+                    <img class="border-2 h-[70%] w-[80%] rounded-[50%] shadow-2xl shadow-black" src="https://img.freepik.com/premium-photo/veg-samosa-is-indian-popular-snack-junk-food-served-with-fried-green-chilly-onion-chutney-ketchup_466689-13445.jpg?w=740" alt="">
+                    <div class="tittle h-[35%] w-[100%] rounded-md text-center">
+                        <h1 class="tittle-text text-white font-semibold md:text-2xl">
+                 Samosa
+                        </h1>
+                        <div class="text-left px-2 flex flex-row justify-between items-center">
+                            <h1 class="text-white text-[12px] font-semibold md:text-xl"> &#x20B9;25 </h1>
+                            <i class=" hover:text-orange-800 cursor-pointer ri-add-circle-fill text-orange-600 text-lg md:text-xl" data-number="5"></i>
+                        </div>
+                
+                    </div>
+                </div>
+                
+                <div class="card h-36 w-32 flex flex-col justify-center items-center gap-1 py-1 md:h-[250px] md:w-[230px]">
+                    <img class="border-2 h-[70%] w-[80%] rounded-[50%] shadow-2xl shadow-black" src="https://img.freepik.com/free-photo/vertical-shot-traditional-indian-paneer-butter-masala-cheese-cottage-curry-black-surface_181624-32001.jpg?t=st=1709669589~exp=1709673189~hmac=72f124457290f0aceae5665952075f84fa1107d62564755b50e041d0ee37585f&w=740" alt="">
+                    <div class="tittle h-[35%] w-[100%] rounded-md text-center">
+                        <h1 class="tittle-text text-white font-semibold md:text-2xl">
+                 Panner Masala
+                        </h1>
+                        <div class="text-left px-2 flex flex-row justify-between items-center">
+                            <h1 class="text-white text-[12px] font-semibold md:text-xl"> &#x20B9;199 </h1>
+                            <i class=" hover:text-orange-800 cursor-pointer ri-add-circle-fill text-orange-600 text-lg md:text-xl" data-number="6"></i>
+                        </div>
+                
+                    </div>
+                </div>
+                
+                <div class="card h-36 w-32 flex flex-col justify-center items-center gap-1 py-1 md:h-[250px] md:w-[230px]">
+                    <img class="border-2 h-[70%] w-[80%] rounded-[50%] shadow-2xl shadow-black" src="https://img.freepik.com/free-photo/top-view-delicious-fries-sauce_23-2149235944.jpg?w=360" alt="">
+                    <div class="tittle h-[35%] w-[100%] rounded-md text-center">
+                        <h1 class="tittle-text text-white font-semibold md:text-2xl">
+                 French Fries
+                        </h1>
+                        <div class="text-left px-2 flex flex-row justify-between items-center">
+                            <h1 class="text-white text-[12px] font-semibold md:text-xl"> &#x20B9;79 </h1>
+                            <i class=" hover:text-orange-800 cursor-pointer ri-add-circle-fill text-orange-600 text-lg md:text-xl" data-number="7"></i>
+                        </div>
+                
+                    </div>
+                </div>
+                
+                <div class="card h-36 w-32 flex flex-col justify-center items-center gap-1 py-1 md:h-[250px] md:w-[230px]">
+                    <img class="border-2 h-[70%] w-[80%] rounded-[50%] shadow-2xl shadow-black" src="https://img.freepik.com/free-photo/sweet-ice-cream-cone-with-strawberry-generative-ai_188544-12340.jpg?t=st=1709669720~exp=1709673320~hmac=14351cb2b02ef967426d026f69b01d4843e5f816b43dc9a8db47ad9c694a51b8&w=740" alt="">
+                    <div class="tittle h-[35%] w-[100%] rounded-md text-center">
+                        <h1 class="tittle-text text-white font-semibold md:text-2xl">
+                 Ice Creme
+                        </h1>
+                        <div class="text-left px-2 flex flex-row justify-between items-center">
+                            <h1 class="text-white text-[12px] font-semibold md:text-xl"> &#x20B9;99 </h1>
+                            <i class=" hover:text-orange-800 cursor-pointer ri-add-circle-fill text-orange-600 text-lg md:text-xl" data-number="8"></i>
+                        </div>
+                
+                    </div>
+                </div>
+                
+                <div class="card h-36 w-32 flex flex-col justify-center items-center gap-1 py-1 md:h-[250px] md:w-[230px]">                                                       
+                    <img class="border-2 h-[70%] w-[80%] rounded-[50%] shadow-2xl shadow-black" src="https://img.freepik.com/free-photo/aromatic-frappuccino-table_23-2148900668.jpg?w=360" alt="">
+                    <div class="tittle h-[35%] w-[100%] rounded-md text-center">
+                        <h1 class="tittle-text text-white font-semibold md:text-2xl">
+                 Cold Coffee
+                        </h1>
+                        <div class="text-left px-2 flex flex-row justify-between items-center">
+                            <h1 class="text-white text-[12px] font-semibold md:text-xl"> &#x20B9;99 </h1>
+                            <i class=" hover:text-orange-800 cursor-pointer ri-add-circle-fill text-orange-600 text-lg md:text-xl" data-number="9"></i>
+                        </div>
+                
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+            <div class="hot-deals-menu grid grid-cols-2 gap-y-10 place-items-center mt-5 md:grid-cols-3">
+                <!-- Insert your Hot Deals menu items here -->
+                <div class="card h-36 w-32 flex flex-col justify-center items-center gap-1 py-1 md:h-[250px] md:w-[230px]">
+                    <img class="border-2 h-[70%] w-[80%] rounded-[50%] shadow-2xl shadow-black" src="https://img.freepik.com/free-photo/front-view-minced-vegetables-rice-colored-bright-surface_140725-14450.jpg?w=900&t=st=1709885855~exp=1709886455~hmac=ec96140ad0e732a8f0ebb459fc382516315688394f6cd57206900b8221c529a3" alt="">
+                    <div class="tittle h-[35%] w-[100%] rounded-md text-center">
+                        <h1 class="tittle-text text-white font-semibold md:text-2xl">
+                            Fried Rice
+                        </h1>
+                        <div class="text-left px-2 flex flex-row justify-between items-center">
+                            <h1 class="text-white text-[12px] font-semibold md:text-xl"> &#x20B9;79 </h1>
+                            <i class=" hover:text-orange-800 cursor-pointer ri-add-circle-fill text-orange-600 text-lg md:text-xl" data-number="10"></i>
+                        </div>
+                
+                    </div>
+                </div>
+
+                <div class="card h-36 w-32 flex flex-col justify-center items-center gap-1 py-1 md:h-[250px] md:w-[230px]">
+                    <img class="border-2 h-[70%] w-[80%] rounded-[50%] shadow-2xl shadow-black" src="https://img.freepik.com/free-photo/asian-food-board-top-view_23-2148771228.jpg?t=st=1709822168~exp=1709825768~hmac=cdf7e27613657c1021b90e74ad4a29d9622bd7b44c1cb618968eaf892f5349a3&w=740" alt="">
+                    <div class="tittle h-[35%] w-[100%] rounded-md text-center">
+                        <h1 class="tittle-text text-white font-semibold md:text-2xl">
+                            Spring Rolls
+                        </h1>
+                        <div class="text-left px-2 flex flex-row justify-between items-center">
+                            <h1 class="text-white text-[12px] font-semibold md:text-xl"> &#x20B9; 89 </h1>
+                            <i class=" hover:text-orange-800 cursor-pointer ri-add-circle-fill text-orange-600 text-lg md:text-xl" data-number="11"></i>
+                        </div>
+                
+                    </div>
+                </div>
+
+                
+                <div class="card h-36 w-32 flex flex-col justify-center items-center gap-1 py-1 md:h-[250px] md:w-[230px]">
+                    <img class="border-2 h-[70%] w-[80%] rounded-[50%] shadow-2xl shadow-black" src="https://img.freepik.com/free-photo/front-view-chocolate-dessert-glass-with-straw_23-2148603311.jpg?t=st=1709822245~exp=1709825845~hmac=49e55e494332de60db6d94fc234e701d638c9bbf6d7d4948d43a2e131fb7937b&w=360" alt="">
+                    <div class="tittle h-[35%] w-[100%] rounded-md text-center">
+                        <h1 class="tittle-text text-white font-semibold md:text-2xl">
+                            Milkshake
+                        </h1>
+                        <div class="text-left px-2 flex flex-row justify-between items-center">
+                            <h1 class="text-white text-[12px] font-semibold md:text-xl"> &#x20B9; 79 </h1>
+                            <i class=" hover:text-orange-800 cursor-pointer ri-add-circle-fill text-orange-600 text-lg md:text-xl" data-number="12"></i>
+                        </div>
+                
+                    </div>
+                </div>
+
+                <div class="card h-36 w-32 flex flex-col justify-center items-center gap-1 py-1 md:h-[250px] md:w-[230px]">
+                    <img class="border-2 h-[70%] w-[80%] rounded-[50%] shadow-2xl shadow-black" src="https://img.freepik.com/free-photo/piece-cake-with-strawberry-crumbs-cup-tea-plate_176474-2975.jpg?t=st=1709669450~exp=1709673050~hmac=539e97e4d80a97430b08bc41a2d997acb40bf58e7b3d76af2ba83434af615cd9&w=740" alt="">
+                    <div class="tittle h-[35%] w-[100%] rounded-md text-center">
+                        <h1 class="tittle-text text-white font-semibold md:text-2xl">
+                 Pastry
+                        </h1>
+                        <div class="text-left px-2 flex flex-row justify-between items-center">
+                            <h1 class="text-white text-[12px] font-semibold md:text-xl"> &#x20B9;49 </h1>
+                            <i class=" hover:text-orange-800 cursor-pointer ri-add-circle-fill text-orange-600 text-lg md:text-xl" data-number="4"></i>
+                        </div>
+                
+                    </div>
+                </div>
+
+                <div class="card h-36 w-32 flex flex-col justify-center items-center gap-1 py-1 md:h-[250px] md:w-[230px]">
+                    <img class="border-2 h-[70%] w-[80%] rounded-[50%] shadow-2xl shadow-black" src="https://img.freepik.com/premium-photo/veg-samosa-is-indian-popular-snack-junk-food-served-with-fried-green-chilly-onion-chutney-ketchup_466689-13445.jpg?w=740" alt="">
+                    <div class="tittle h-[35%] w-[100%] rounded-md text-center">
+                        <h1 class="tittle-text text-white font-semibold md:text-2xl">
+                 Samosa
+                        </h1>
+                        <div class="text-left px-2 flex flex-row justify-between items-center">
+                            <h1 class="text-white text-[12px] font-semibold md:text-xl"> &#x20B9;25 </h1>
+                            <i class=" hover:text-orange-800 cursor-pointer ri-add-circle-fill text-orange-600 text-lg md:text-xl" data-number="5"></i>
+                        </div>
+                
+                    </div>
+                </div>
+
+                <div class="card h-36 w-32 flex flex-col justify-center items-center gap-1 py-1 md:h-[250px] md:w-[230px]">
+                    <img class="border-2 h-[70%] w-[80%] rounded-[50%] shadow-2xl shadow-black" src="https://img.freepik.com/free-photo/salad-from-tomatoes-cucumber-red-onions-lettuce-leaves-healthy-summer-vitamin-menu-vegan-vegetable-food-vegetarian-dinner-table-top-view-flat-lay_2829-6482.jpg?t=st=1709822292~exp=1709825892~hmac=b81a7219e4c9b7516d3542d7cab8c046539dfecee6bac1828d8c9cd6ec3e5fdd&w=1060" alt="">
+                    <div class="tittle h-[35%] w-[100%] rounded-md text-center">
+                        <h1 class="tittle-text text-white font-semibold md:text-2xl">
+                            Salad
+                        </h1>
+                        <div class="text-left px-2 flex flex-row justify-between items-center">
+                            <h1 class="text-white text-[12px] font-semibold md:text-xl"> &#x20B9; 49 </h1>
+                            <i class=" hover:text-orange-800 cursor-pointer ri-add-circle-fill text-orange-600 text-lg md:text-xl" data-number="13"></i>
+                        </div>
+                
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="popular-menu grid grid-cols-2 gap-y-10 place-items-center mt-5 transition-all duration-500 md:grid-cols-3">
+                <!-- Insert your Hot Deals menu items here -->
+                <div class="card h-36 w-32 flex flex-col justify-center items-center gap-1 py-1 md:h-[250px] md:w-[230px]">
+                    <img class="border-2 h-[70%] w-[80%] rounded-[50%] shadow-2xl shadow-black" src="https://img.freepik.com/free-photo/top-view-delicious-fruit-composition-fresh-sliced-mellow-fruits-dark-background-ripe-fresh-mellow-health-diet_140725-116255.jpg?t=st=1709822325~exp=1709825925~hmac=f1e7bbbfccd0c5fbd88d0cf53823fc310c6f136474c67031d7b914bd05397c24&w=360" alt="">
+                    <div class="tittle h-[35%] w-[100%] rounded-md text-center">
+                        <h1 class="tittle-text text-white font-semibold md:text-2xl">
+                            Fruit Bowl
+                        </h1>
+                        <div class="text-left px-2 flex flex-row justify-between items-center">
+                            <h1 class="text-white text-[12px] font-semibold md:text-xl"> &#x20B9;99 </h1>
+                            <i class=" hover:text-orange-800 cursor-pointer ri-add-circle-fill text-orange-600 text-lg md:text-xl" data-number="14"></i>
+                        </div>
+                
+                    </div>
+                </div>
+
+                <div class="card h-36 w-32 flex flex-col justify-center items-center gap-1 py-1 md:h-[250px] md:w-[230px]">
+                    <img class="border-2 h-[70%] w-[80%] rounded-[50%] shadow-2xl shadow-black" src="https://img.freepik.com/free-photo/red-lentil-soup-dark-surface-healthy-eating-concept-vegan-food_2829-6071.jpg?t=st=1709822364~exp=1709825964~hmac=97c7f9069421260c7148aa0b5230343dda4da36bbd6139dd95f4b079b4c44900&w=1060" alt="">
+                    <div class="tittle h-[35%] w-[100%] rounded-md text-center">
+                        <h1 class="tittle-text text-white font-semibold md:text-2xl">
+                            Vegetable Soup
+                        </h1>
+                        <div class="text-left px-2 flex flex-row justify-between items-center">
+                            <h1 class="text-white text-[12px] font-semibold md:text-xl"> &#x20B9; 99 </h1>
+                            <i class=" hover:text-orange-800 cursor-pointer ri-add-circle-fill text-orange-600 text-lg md:text-xl" data-number="15"></i>
+                        </div>
+                
+                    </div>
+                </div>
+
+                
+                <div class="card h-36 w-32 flex flex-col justify-center items-center gap-1 py-1 md:h-[250px] md:w-[230px]">
+                    <img class="border-2 h-[70%] w-[80%] rounded-[50%] shadow-2xl shadow-black" src="https://img.freepik.com/premium-photo/kaju-katli_57665-206.jpg?w=1060" alt="">
+                    <div class="tittle h-[35%] w-[100%] rounded-md text-center">
+                        <h1 class="tittle-text text-white font-semibold md:text-2xl">
+                            Kaju Katli
+                        </h1>
+                        <div class="text-left px-2 flex flex-row justify-between items-center">
+                            <h1 class="text-white text-[12px] font-semibold md:text-xl"> &#x20B9; 99 </h1>
+                            <i class=" hover:text-orange-800 cursor-pointer ri-add-circle-fill text-orange-600 text-lg md:text-xl" data-number="16"></i>
+                        </div>
+                
+                    </div>
+                </div>
+
+                <div class="card h-36 w-32 flex flex-col justify-center items-center gap-1 py-1 md:h-[250px] md:w-[230px]">
+                    <img class="border-2 h-[70%] w-[80%] rounded-[50%] shadow-2xl shadow-black" src="https://img.freepik.com/free-photo/traditional-indian-soup-lentils-indian-dhal-spicy-curry-bowl-spices-herbs-rustic-black-wooden-table_2829-18717.jpg?t=st=1709822474~exp=1709826074~hmac=6b4985fffb59a544944f42697a2527ded92e8d1e4e86d5fe9875ae230a01c0fb&w=1060" alt="">
+                    <div class="tittle h-[35%] w-[100%] rounded-md text-center">
+                        <h1 class="tittle-text text-white font-semibold md:text-2xl">
+                            Dal Tadka
+                        </h1>
+                        <div class="text-left px-2 flex flex-row justify-between items-center">
+                            <h1 class="text-white text-[12px] font-semibold md:text-xl"> &#x20B9;109 </h1>
+                            <i class=" hover:text-orange-800 cursor-pointer ri-add-circle-fill text-orange-600 text-lg md:text-xl" data-number="17"></i>
+                        </div>
+                
+                    </div>
+                </div>
+
+             
+                <div class="card h-36 w-32 flex flex-col justify-center items-center gap-1 py-1 md:h-[250px] md:w-[230px]">
+                    <img class="border-2 h-[70%] w-[80%] rounded-[50%] shadow-2xl shadow-black" src="https://img.freepik.com/free-photo/asian-food-board-top-view_23-2148771228.jpg?t=st=1709822168~exp=1709825768~hmac=cdf7e27613657c1021b90e74ad4a29d9622bd7b44c1cb618968eaf892f5349a3&w=740" alt="">
+                    <div class="tittle h-[35%] w-[100%] rounded-md text-center">
+                        <h1 class="tittle-text text-white font-semibold md:text-2xl">
+                            Spring Rolls
+                        </h1>
+                        <div class="text-left px-2 flex flex-row justify-between items-center">
+                            <h1 class="text-white text-[12px] font-semibold md:text-xl"> &#x20B9; 89 </h1>
+                            <i class=" hover:text-orange-800 cursor-pointer ri-add-circle-fill text-orange-600 text-lg md:text-xl" data-number="11"></i>
+                        </div>
+                
+                    </div>
+                </div>
+
+                <div class="card h-36 w-32 flex flex-col justify-center items-center gap-1 py-1 md:h-[250px] md:w-[230px]">
+                    <img class="border-2 h-[70%] w-[80%] rounded-[50%] shadow-2xl shadow-black" src="https://img.freepik.com/free-photo/top-view-delicious-fries-sauce_23-2149235944.jpg?w=360" alt="">
+                    <div class="tittle h-[35%] w-[100%] rounded-md text-center">
+                        <h1 class="tittle-text text-white font-semibold md:text-2xl">
+                 French Fries
+                        </h1>
+                        <div class="text-left px-2 flex flex-row justify-between items-center">
+                            <h1 class="text-white text-[12px] font-semibold md:text-xl"> &#x20B9;79 </h1>
+                            <i class=" hover:text-orange-800 cursor-pointer ri-add-circle-fill text-orange-600 text-lg md:text-xl" data-number="7"></i>
+                        </div>
+                
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+<div class="cart mt-5 flex justify-center items-center md:mt-7">
+    <div class="mb-5 h-12 w-12 bg-orange-700 rounded-[50%] flex justify-center items-center md:h-16 md:w-16 bagOpen cursor-pointer hover:bg-orange-800 hover:shadow-xl hover:shadow-black">
+        <i class="ri-shopping-bag-3-fill text-2xl text-white md:text-3xl"></i>
+    </div>
+</div>
+    </main>
+     <!-- *********** Main-Section Ends *********** -->
+    <script src="script.js"></script>
+</body>
+</html>
